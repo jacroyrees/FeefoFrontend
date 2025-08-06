@@ -1,5 +1,10 @@
 # Feefo Frontend
 
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/f2d509af-4c59-496c-8cd0-d3376e4f1aef" />
+<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/92e08481-b7e0-4b80-8dbb-7e9afe3f629e" />
+<img width="1138" height="444" alt="image" src="https://github.com/user-attachments/assets/765ee5fe-31e3-4b7c-a58c-ee43bc093155" />
+<img width="357" height="483" alt="image" src="https://github.com/user-attachments/assets/52367760-5d3a-482d-956e-84703ab6dd1c" />
+
 ## UI Assessment Task
 
 This repository implements the provided UI design as a set of modular React components. The assessment demonstrates:
