@@ -25,23 +25,18 @@ const RatingsGroup = ({
   ratingsData,
   mode = "primary",
 }: RatingsGroupProps): JSX.Element => {
-  // Calculate the total number of reviews
   const totalReviews = Object.values(ratingsData).reduce((a, b) => a + b, 0);
 
   return (
-    // Grid container for the ratings distribution
     <Styled.GridContainer aria-label="Distribution of reviews by star rating">
       {Array.from({ length: 5 }, (_, index) => {
-        // Calculate star rating (5 to 1)
+        // Calculate the star rating (5 to 1) whilst iterating from 0 to 4
         const reviewNumber = 5 - index;
-        // Get count of reviews for this star rating
         const count = ratingsData[reviewNumber] || 0;
-        // Calculate percentage for progress bar
         const progress = totalReviews ? (count / totalReviews) * 100 : 0;
 
         return (
           <React.Fragment key={reviewNumber}>
-            {/* Left column: star rating number and icon */}
             <Styled.LeftColumn
               mode={mode}
               aria-label={`${reviewNumber} star rating`}
@@ -49,7 +44,6 @@ const RatingsGroup = ({
               {reviewNumber}
               <Star isIcon mode={mode} aria-hidden="true" />
             </Styled.LeftColumn>
-            {/* Centre column: progress bar for percentage of reviews */}
             <Styled.CentreColumn
               aria-label={`${Math.round(
                 progress,
@@ -57,7 +51,6 @@ const RatingsGroup = ({
             >
               <ProgressBar progress={progress} mode={mode} aria-hidden="true" />
             </Styled.CentreColumn>
-            {/* Right column: count of reviews for this rating */}
             <Styled.RightColumn mode={mode} aria-label={`${count} reviews`}>
               {count}
             </Styled.RightColumn>
@@ -67,5 +60,4 @@ const RatingsGroup = ({
     </Styled.GridContainer>
   );
 };
-// Export the RatingsGroup component as default
 export default RatingsGroup;
