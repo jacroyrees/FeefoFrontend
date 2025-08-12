@@ -17,7 +17,7 @@ describe("RatingsGroup", () => {
     for (let i = 5; i >= 1; i--) {
       expect(screen.getByLabelText(`${i} star rating`)).toBeInTheDocument();
       expect(
-        screen.getByLabelText(`${ratingsData[i]} reviews`),
+        screen.getByLabelText(`${ratingsData[i as keyof typeof ratingsData]} reviews`),
       ).toBeInTheDocument();
     }
   });
@@ -26,7 +26,7 @@ describe("RatingsGroup", () => {
     renderWithTheme(<RatingsGroup ratingsData={ratingsData} mode="primary" />);
     const total = Object.values(ratingsData).reduce((a, b) => a + b, 0);
     for (let i = 5; i >= 1; i--) {
-      const progress = total ? Math.round((ratingsData[i] / total) * 100) : 0;
+      const progress = total ? Math.round((ratingsData[i as keyof typeof ratingsData] / total) * 100) : 0;
       expect(
         screen.getByLabelText(`${progress}% of reviews are ${i} stars`),
       ).toBeInTheDocument();
